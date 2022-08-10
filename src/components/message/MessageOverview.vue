@@ -9,9 +9,7 @@ const { messages, initialized } = storeToRefs(useMessageStore())
 const { fetch } = useMessageStore()
 
 onMounted(async () => {
-    if (!initialized) {
-        await fetch()
-    }
+    await fetch()
 })
 </script>
 

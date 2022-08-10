@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { computed, PropType, ref } from 'vue';
-import { messageApi } from '../../api/firestore-by-type/messageApi';
+import { computed, ref } from 'vue';
+import { useMessageStore } from '../../stores/messages';
 
-const title=ref("")
-const text=ref("")
+const title=ref('')
+const text=ref('')
 const isValid = computed(() => title.value.length > 0)
+const { addMessage } = useMessageStore()
 
-function addMessage() {
+async function create() {
   if(text.value.length > 0 ){
-    messageApi.create({
+    await addMessage({
       title: title.value,
       text: text.value,
     })
-    title.value = text.value = "";
+    title.value = text.value = '';
   }
 }
 </script>
@@ -21,7 +22,7 @@ function addMessage() {
   <div>
     <input v-model="title">
     <input v-model="text">
-    <button @click="addMessage()" :disabled="!isValid">Add</button>
+    <button @click="create" :disabled="!isValid">Add</button>
   </div>
 </template>
 

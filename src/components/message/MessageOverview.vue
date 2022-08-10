@@ -1,25 +1,23 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { messageApi } from '../../api/firestore-by-type/messageApi';
-import { Message } from '../../types';
+import { onMounted } from 'vue'
 import MessageDisplay from './MessageDisplay.vue'
 import MessageCreate from './MessageCreate.vue'
+import { storeToRefs } from 'pinia';
+import { useMessageStore } from '../../stores/messages';
 
-const messages = ref<Message[]>([])
+const { messages, initialized } = storeToRefs(useMessageStore())
+const { fetch } = useMessageStore()
 
 onMounted(async () => {
-    await refresh();
+    if (!initialized) {
+        await fetch()
+    }
 })
-
-async function refresh() {
-    messages.value = await messageApi.getAll();
-}
 </script>
 
 <template>
     <h1>Messages</h1>
     <message-create />
-    <button @click="refresh">refresh</button>
     <message-display v-for="(message, index) in messages" :key="index" :message="message" />
 </template>
 

@@ -10,12 +10,14 @@
     "url": "git+https://github.com/hexagon06/vue3-template.git"
   },
   "keywords": [
-    "vue",
-    "vue3",
-    "storybook",
+    "pinia",
     "rollup",
+    "storybook",
+    "tailwind",
     "typescript",
-    "vite"
+    "vite",
+    "vue",
+    "vue3"
   ],
   "author": {
     "name": "Jasper Saaltink"
@@ -45,6 +47,7 @@
   },
   "dependencies": {
     "firebase": "^9.9.2",
+    "pinia": "^2.0.17",
     "vue": "^3.2.25"
   },
   "devDependencies": {

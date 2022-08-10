@@ -1,13 +1,13 @@
 {
-  "name": "rpg-legend-lore",
+  "name": "vue3-template",
   "version": "0.1.0",
   "description": "A vue3 library project base. Intended to quickstart your library development without all the configuration hassle.",
-  "main": "./dist/rpg-legend-lore.umd.js",
-  "module": "./dist/rpg-legend-lore.es.js",
+  "main": "./dist/vue3-template.umd.js",
+  "module": "./dist/vue3-template.es.js",
   "types": "./dist/types/library.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexagon06/rpg-legend-lore.git"
+    "url": "git+https://github.com/hexagon06/vue3-template.git"
   },
   "keywords": [
     "vue",
@@ -22,16 +22,16 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hexagon06/rpg-legend-lore/issues"
+    "url": "https://github.com/hexagon06/vue3-template/issues"
   },
-  "homepage": "https://github.com/hexagon06/rpg-legend-lore#readme",
+  "homepage": "https://github.com/hexagon06/vue3-template#readme",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "import": "./dist/rpg-legend-lore.umd.js",
-      "require": "./dist/rpg-legend-lore.es.js"
+      "import": "./dist/vue3-template.umd.js",
+      "require": "./dist/vue3-template.es.js"
     }
   },
   "scripts": {
@@ -88,5 +88,5 @@
     "webpack": "^5.73.0"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "rpg-legend-lore@0.1.0"
+  "_id": "vue3-template@0.1.0"
 }
